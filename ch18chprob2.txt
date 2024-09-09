@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+    char ch='A';
+    int i=10;
+    float a=3.14;
+    char str[20];
+    printf("%d %c %f\n",i,ch,a);
+    sprintf(str,"%d %c %f\n",i,ch,a);
+    printf("%s\n",str);
+    return 0;
+}
+output=
+
+10 A 3.140000
+10 A 3.140000

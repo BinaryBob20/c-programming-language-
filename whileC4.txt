@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+    int num,p=0,n=0,z=0;
+    char ch;
+
+    while (1) {
+        
+        printf("Enter a number: ");
+        scanf("%d", &num);
+
+
+        if (num > 0) {
+            p++;
+        } else if (num < 0) {
+            n++;
+        } else {
+            z++;
+        }
+
+   
+        printf("Do you want to enter another number? (y/n): ");
+        scanf(" %c", &ch);
+
+        if (ch == 'n' || ch == 'N') {
+            break;
+        }
+    }
+
+    printf("Count of positive numbers: %d\n", p);
+    printf("Count of negative numbers: %d\n", n);
+    printf("Count of zeros: %d\n", z);
+
+    return 0;
+
+}

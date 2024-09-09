@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() {
+    int isbn[10], i;
+    int checksum = 0;
+    printf("Enter a 10-digit ISBN: ");
+    for (i = 0; i < 10; i++) {
+        scanf("%1d", &isbn[i]);
+    }
+    for (i = 0; i < 10; i++) {
+        checksum += (i + 1) * isbn[i];
+    }
+    if (checksum % 11 == 0) {
+        printf("The ISBN number is correct.\n");
+    } else {
+        printf("The ISBN number is incorrect.\n");
+    }
+    return 0;
+}
+
+Output=
+
+Enter a 10-digit ISBN: 1234567890
+The ISBN number is incorrect.

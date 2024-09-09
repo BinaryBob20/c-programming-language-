@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <string.h>
+struct Student {
+    int roll_number;
+    char name[50];
+    char department[50];
+    char course[50];
+    int year_of_joining;
+};
+void printStudentsByYear(struct Student students[], int n, int year) {
+    printf("Students who joined in the year %d:\n", year);
+    for (int i = 0; i < n; i++) {
+        if (students[i].year_of_joining == year) {
+            printf("%s\n", students[i].name);
+        }
+    }
+}
+void printStudentByRollNumber(struct Student students[], int n, int roll_number) {
+    for (int i = 0; i < n; i++) {
+        if (students[i].roll_number == roll_number) {
+            printf("Roll Number: %d\n", students[i].roll_number);
+            printf("Name: %s\n", students[i].name);
+            printf("Department: %s\n", students[i].department);
+            printf("Course: %s\n", students[i].course);
+            printf("Year of Joining: %d\n", students[i].year_of_joining);
+            return;
+        }
+    }
+    printf("Student with Roll Number %d not found.\n", roll_number);
+}
+
+int main() {
+    struct Student students[450];
+    int n = 3; 
+    students[0].roll_number = 101;
+    strcpy(students[0].name, "satish");
+    strcpy(students[0].department, "Computer Science");
+    strcpy(students[0].course, "B.Tech");
+    students[0].year_of_joining = 2021;
+    students[1].roll_number = 102;
+    strcpy(students[1].name, "Bob");
+    strcpy(students[1].department, "Electrical Engineering");
+    strcpy(students[1].course, "B.Tech");
+    students[1].year_of_joining = 2020;
+    students[2].roll_number = 103;
+    strcpy(students[2].name, "abhinesh");
+    strcpy(students[2].department, "Mechanical Engineering");
+    strcpy(students[2].course, "B.Tech");
+    students[2].year_of_joining = 2021;
+    int year = 2021;
+    printStudentsByYear(students, n, year);
+    int roll_number = 102;
+    printStudentByRollNumber(students, n, roll_number);
+    return 0;
+}
+
+output=
+
+Students who joined in the year 2021:
+satish
+abhinesh
+Roll Number: 102
+Name: Bob
+Department: Electrical Engineering
+Course: B.Tech
+Year of Joining: 2020

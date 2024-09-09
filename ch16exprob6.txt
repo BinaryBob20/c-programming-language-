@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <string.h>
+void convert_to_words(int num, char *output);
+int main() {
+    int number;
+    char words[100] = "";
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+    if (number == 0) {
+        printf("Zero\n");
+        return 0;
+    }
+    convert_to_words(number, words);
+    printf("%s\n", words);
+    return 0;
+}
+void convert_to_words(int num, char *output) {
+    char *single_digits[] = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+    char *two_digits[] = {"", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+    char *tens_multiple[] = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+    char *place_values[] = {"", "thousand", "hundred"};
+    if (num >= 1000) {
+        int thousands = num / 1000;
+        strcat(output, single_digits[thousands]);
+        strcat(output, " ");
+        strcat(output, place_values[1]);
+        strcat(output, " ");
+        num %= 1000;
+    }
+    if (num >= 100) {
+        int hundreds = num / 100;
+        strcat(output, single_digits[hundreds]);
+        strcat(output, " ");
+        strcat(output, place_values[2]);
+        strcat(output, " ");
+        num %= 100;
+    }
+    if (num >= 20) {
+        int tens = num / 10;
+        strcat(output, tens_multiple[tens]);
+        strcat(output, " ");
+        num %= 10;
+    }
+    if (num >= 10 && num < 20) {
+        strcat(output, two_digits[num - 10]);
+        strcat(output, " ");
+    } else if (num > 0 && num < 10) {
+        strcat(output, single_digits[num]);
+        strcat(output, " ");
+    }
+}
+
+Output=
+
+Enter an integer: 12342
+twelve thousand three hundred forty two 

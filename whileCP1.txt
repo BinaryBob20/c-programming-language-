@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() 
+{
+    float opay;
+    int h,i=1;
+
+    while (i<=10) 
+    {
+        printf("\nEnter no of hours worked=");
+        scanf("%d",&h);
+        if(h>=40)
+        {
+            opay=(h-40)*120;
+        }
+        else
+        {
+            opay=0;
+        }    
+        printf("Hours=%d Overtime pay=Rs%0.f\n",h,opay);
+        
+        i++;
+    }
+
+    return 0;
+}

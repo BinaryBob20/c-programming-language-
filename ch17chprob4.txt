@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    int age;
+    int total_marks;
+};
+
+int main() {
+    struct Student s1, s2;
+    float average_marks;
+    printf("Enter name of the first student: ");
+    fgets(s1.name, sizeof(s1.name), stdin);
+    printf("Enter age of the first student: ");
+    scanf("%d", &s1.age);
+    printf("Enter total marks of the first student: ");
+    scanf("%d", &s1.total_marks);
+    while(getchar() != '\n');
+    printf("Enter name of the second student: ");
+    fgets(s2.name, sizeof(s2.name), stdin);
+    printf("Enter age of the second student: ");
+    scanf("%d", &s2.age);
+    printf("Enter total marks of the second student: ");
+    scanf("%d", &s2.total_marks);
+    printf("\nStudent 1 Information:\n");
+    printf("Name: %s", s1.name);
+    printf("Age: %d\n", s1.age);
+    printf("Total Marks: %d\n", s1.total_marks);
+    printf("\nStudent 2 Information:\n");
+    printf("Name: %s", s2.name);
+    printf("Age: %d\n", s2.age);
+    printf("Total Marks: %d\n", s2.total_marks);
+    average_marks = (s1.total_marks + s2.total_marks) / 2.0;
+    printf("\nAverage of total marks: %.2f\n", average_marks);
+
+    return 0;
+}
+
+Output=
+
+Enter name of the first student: bob
+Enter age of the first student: 21
+Enter total marks of the first student: 325
+Enter name of the second student: satish
+Enter age of the second student: 26
+Enter total marks of the second student: 123
+
+Student 1 Information:
+Name: bob
+Age: 21
+Total Marks: 325
+
+Student 2 Information:
+Name: satish
+Age: 26
+Total Marks: 123
+
+Average of total marks: 224.00

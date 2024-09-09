@@ -1,0 +1,31 @@
+#include<stdio.h>
+void increment();
+void decrement();
+int main()
+{
+    int i;
+    printf("\ni=%d",i);
+    increment();
+    increment();
+    decrement();
+    decrement();
+    return 0;
+}
+void increment()
+{
+    int i;
+    i=i+1;
+    printf("\nOn incrementing i=%d\n",i);
+}
+void decrement()
+{
+    int i;
+    i=i-1;
+    printf("On decrementing i=%d\n",i);
+}
+Output=
+i=0
+On incrementing i=32530
+On incrementing i=32531
+On decrementing i=32530
+On decrementing i=32529

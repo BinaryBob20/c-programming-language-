@@ -1,0 +1,69 @@
+#include <stdio.h>
+void displayYear(int yearBits);
+void displayStream(int streamBits);
+void displayStudentInfo(int data);
+int main() {
+    int data[] = {273, 548, 786, 1096};
+    int n = sizeof(data) / sizeof(data[0]);
+    for (int i = 0; i < n; i++) {
+        printf("\nStudent %d:\n", i + 1);
+        displayStudentInfo(data[i]);
+    }
+    return 0;
+}
+void displayYear(int yearBits) {
+    if (yearBits & (1 << 0)) {
+        printf("Year: 1st Year\n");
+    } else if (yearBits & (1 << 1)) {
+        printf("Year: 2nd Year\n");
+    } else if (yearBits & (1 << 2)) {
+        printf("Year: 3rd Year\n");
+    } else if (yearBits & (1 << 3)) {
+        printf("Year: 4th Year\n");
+    } else {
+        printf("Year: Not specified\n");
+    }
+}
+void displayStream(int streamBits) {
+    if (streamBits & (1 << 4)) {
+        printf("Stream: Mechanical\n");
+    } else if (streamBits & (1 << 5)) {
+        printf("Stream: Chemical\n");
+    } else if (streamBits & (1 << 6)) {
+        printf("Stream: Electronics\n");
+    } else if (streamBits & (1 << 7)) {
+        printf("Stream: Computer Science\n");
+    } else {
+        printf("Stream: Not specified\n");
+    }
+}
+void displayStudentInfo(int data) {
+    int yearBits = data & 0xF;        
+    int streamBits = data & 0xF0;     
+    int roomNumber = data >> 8;       
+    displayYear(yearBits);
+    displayStream(streamBits);
+    printf("Room Number: %d\n", roomNumber);
+}
+
+Output=
+
+Student 1:
+Year: 1st Year
+Stream: Mechanical
+Room Number: 1
+
+Student 2:
+Year: 3rd Year
+Stream: Chemical
+Room Number: 2
+
+Student 3:
+Year: 2nd Year
+Stream: Mechanical
+Room Number: 3
+
+Student 4:
+Year: 4th Year
+Stream: Electronics
+Room Number: 4

@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <ctype.h>
+int isVowel(char ch);
+int countVowelPairs(char str[]);
+int main() {
+    char str[100];
+    printf("Enter a line of text: ");
+    fgets(str, sizeof(str), stdin);
+    int count = countVowelPairs(str);
+    printf("Number of occurrences of two successive vowels: %d\n", count);
+    return 0;
+}
+
+int isVowel(char ch) {
+    ch = tolower(ch);
+    return (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u');
+}
+
+int countVowelPairs(char str[]) {
+    int count = 0;
+    
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (isVowel(str[i]) && isVowel(str[i+1])) {
+            count++;
+        }
+    }
+    return count;
+}
+
+Output=
+
+Enter a line of text: please read this application and give me gratitude
+Number of occurrences of two successive vowels: 3

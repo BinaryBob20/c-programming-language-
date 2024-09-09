@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int num, remainder;
+    int octal = 0, place = 1;
+
+
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+ 
+    while (num > 0) {
+        remainder = num % 8;
+        octal += remainder * place;
+        num /= 8;
+        place *= 10;
+    }
+
+
+    printf("Octal equivalent: %d\n", octal);
+
+    return 0;
+}

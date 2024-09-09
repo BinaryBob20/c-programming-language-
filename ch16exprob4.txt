@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <string.h>
+void abbreviateName(char name[]);
+int main() {
+    int n;
+    printf("Enter the number of names: ");
+    scanf("%d", &n);
+    getchar();
+    char names[n][100];
+    for(int i = 0; i < n; i++) {
+        printf("Enter name %d: ", i + 1);
+        fgets(names[i], 100, stdin);
+        names[i][strcspn(names[i], "\n")] = '\0'; 
+    }
+    printf("\nAbbreviated Names:\n");
+    for(int i = 0; i < n; i++) {
+        abbreviateName(names[i]);
+    }
+    return 0;
+}
+
+void abbreviateName(char name[]) {
+    char result[100] = "";
+    char *token = strtok(name, " ");
+    
+    while(token != NULL) {
+        if(strlen(token) == 1) {
+            strcat(result, token);
+            strcat(result, " ");
+        } else {
+            char temp[3];
+            temp[0] = token[0];
+            temp[1] = '.';
+            temp[2] = '\0';
+            strcat(result, temp);
+            strcat(result, " ");
+        }
+        token = strtok(NULL, " ");
+    }
+    printf("%s\n", result);
+}
+
+Output=
+
+Enter the number of names: 2
+Enter name 1: Tejas Anand Mane 
+Enter name 2: Satish Sapna Choudry
+
+Abbreviated Names:
+T. A. M. 
+S. S. C. 

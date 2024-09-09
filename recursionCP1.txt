@@ -1,0 +1,21 @@
+#include<stdio.h>
+int rsum(int);
+int main(){
+    int num,sum,n;
+    printf("Enter 5 numbers=");
+    scanf("%d",&num);
+    sum=rsum(num);
+    printf("Sum of digits is %d\n",sum);
+    return 0;
+}
+int rsum(int n){
+    int s,r;
+    if(n!=0){
+        r=n%10;
+        s=r+rsum(n/10);
+    }
+    else{
+        return 0;
+    }
+    return s;
+}

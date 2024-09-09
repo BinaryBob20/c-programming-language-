@@ -1,0 +1,55 @@
+#include<stdlib.h>
+#include <stdio.h>
+struct queue {
+    int item;
+    struct queue *link;
+};
+struct queue *rear = NULL, *front = NULL;
+void add(int item) {
+    struct queue *q = (struct queue *)malloc(sizeof(struct queue));
+    q->item = item;
+    q->link = NULL;
+    if (rear == NULL) {
+        rear = q;
+        front = q;
+    } else {
+        rear->link = q;
+        rear = q;
+    }
+}
+int del_queue() {
+    int item;
+    struct queue *q = front;
+    if (front == NULL) {
+        printf("Queue is empty\n");
+        return -1;
+    } else {
+        item = q->item;
+        front = front->link;  
+        if (front == NULL) {
+            rear = NULL;
+        }
+        free(q);
+    }
+    return item;
+}
+
+int main() {
+    int item;
+    add(10);
+    add(20);
+    add(30);
+    add(40);
+    add(50);
+    add(60);
+    item = del_queue();
+    printf("Deleted item = %d\n", item);
+    item = del_queue();
+    printf("Deleted item = %d\n", item);
+    return 0;
+}
+
+Output=
+
+Deleted item = 10
+Deleted item = 20

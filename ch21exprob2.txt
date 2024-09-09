@@ -1,0 +1,41 @@
+#include <stdio.h>
+struct animal {
+    char name[30];
+    int type;
+};
+void determineAnimalType(struct animal a);
+int main() {
+    struct animal a = {"OCELOT", 18};
+    determineAnimalType(a);
+    return 0;
+}
+void determineAnimalType(struct animal a) {
+    printf("Animal Name: %s\n", a.name);
+    if (a.type & (1 << 0)) {
+        printf("Type: Canine\n");
+    } 
+    else if (a.type & (1 << 1)) {
+        printf("Type: Feline\n");
+    } 
+    else if (a.type & (1 << 2)) {
+        printf("Type: Cetacean\n");
+    } 
+    else if (a.type & (1 << 3)) {
+        printf("Type: Marsupial\n");
+    } 
+    else {
+        printf("Type: Unknown\n");
+    }
+    if (a.type & (1 << 4)) {
+        printf("Diet: Carnivore\n");
+    } 
+    else {
+        printf("Diet: Herbivore\n");
+    }
+}
+
+Output=
+
+Animal Name: OCELOT
+Type: Feline
+Diet: Carnivore

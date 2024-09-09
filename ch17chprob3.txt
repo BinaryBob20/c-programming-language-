@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+void linkfloat();
+
+int main() {
+    struct book {
+        char name[50];
+        float price;
+        int pages;
+    };
+
+    struct book b[10];
+    int i;
+
+    for(i = 0; i < 10; i++){
+        printf("Enter name, price, and number of pages of book %d:\n", i + 1);
+        scanf("%s %f %d", b[i].name, &b[i].price, &b[i].pages);
+    }
+
+    for(i = 0; i < 10; i++) {
+        printf("Book %d: %s, Price: %.2f, Pages: %d\n", i + 1, b[i].name, b[i].price, b[i].pages);
+    }
+
+    return 0;
+}
+
+void linkfloat() {
+    float a = 0, *b;
+    b = &a;
+    a = *b;
+}
+
+
+Output=
+
+Enter name, price, and number of pages of 3 books
+A 256.30 326
+Enter name, price, and number of pages of 3 books
+C 325.65 123
+Enter name, price, and number of pages of 3 books
+F 123.65 265
+Enter name, price, and number of pages of 3 books
+D 132.89 657
+Enter name, price, and number of pages of 3 books
+S 178.69 458
+Enter name, price, and number of pages of 3 books
+L 459.32 578
+Enter name, price, and number of pages of 3 books
+Q 234.12 659
+Enter name, price, and number of pages of 3 books
+W 789.32 457
+Enter name, price, and number of pages of 3 books
+E 257.10 657
+Enter name, price, and number of pages of 3 books
+O 659.14 457

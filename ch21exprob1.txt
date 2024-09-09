@@ -1,0 +1,44 @@
+#include <stdio.h>
+void displayGamesWon(int game);
+int main() {
+    int game;
+    printf("Enter the bit pattern (0-255) representing the games won: ");
+    scanf("%d", &game);
+    if (game < 0 || game > 255) {
+        printf("Invalid input. Please enter a number between 0 and 255.\n");
+        return 1;
+    }
+    displayGamesWon(game);
+    return 0;
+}
+void displayGamesWon(int game) {
+    const char *games[] = {
+        "Cricket", "Basketball", "Football", "Hockey",
+        "Lawn Tennis", "Table Tennis", "Carom", "Chess"
+    };
+    int count = 0;
+    printf("Games won by the college:\n");
+    for (int i = 0; i < 8; i++) {
+        if (game & (1 << i)) {
+            printf("%s\n", games[i]);
+            count++;
+        }
+    }
+    if (count >= 5) {
+        printf("\nThe college won %d games and is awarded the 'Champion of Champions' trophy.\n", count);
+    } else {
+        printf("\nThe college won %d games and did not qualify for the 'Champion of Champions' trophy.\n", count);
+    }
+}
+
+Output=
+
+Enter the bit pattern (0-255) representing the games won: 155
+Games won by the college:
+Cricket
+Basketball
+Hockey
+Lawn Tennis
+Chess
+
+The college won 5 games and is awarded the 'Champion of Champions' trophy.

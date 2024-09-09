@@ -1,0 +1,26 @@
+#include<stdio.h>
+#define _BV(x) (1<<x)
+void showbits(unsigned char n);
+int main(){
+    unsigned char color,i;
+    int c;
+    char *rbcolor[]={"violet", "indigo", "blue", "green", "yellow", "orange", "red"};
+    printf("\nEnter any number=");
+    scanf("%d",&c);
+    color=(unsigned char)c;
+    printf("Color represented are=\n");
+    for(i=0;i<=6;i++){
+        if((color &_BV(i))==_BV(i)){
+            printf("%s\n",rbcolor[i]);
+        }
+    }
+    return 0;
+}
+
+output=
+
+Enter any number=3
+Color represented are=
+violet
+indigo
+

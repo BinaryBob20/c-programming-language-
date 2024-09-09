@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <string.h>
+struct Customer {
+    int account_number;
+    char name[50];
+    float balance;
+};
+void printLowBalanceCustomers(struct Customer customers[], int n) {
+    printf("Customers with balance below Rs. 1000:\n");
+    for (int i = 0; i < n; i++) {
+        if (customers[i].balance < 1000) {
+            printf("Account Number: %d, Name: %s\n", customers[i].account_number, customers[i].name);
+        }
+    }
+}
+void transaction(struct Customer customers[], int n, int account_number, float amount, int code) {
+    for (int i = 0; i < n; i++) {
+        if (customers[i].account_number == account_number) {
+            if (code == 1) { // Deposit
+                customers[i].balance += amount;
+                printf("Deposit successful. New balance: Rs. %.2f\n", customers[i].balance);
+            } else if (code == 0) { // Withdrawal
+                if (customers[i].balance - amount < 1000) {
+                    printf("The balance is insufficient for the specified withdrawal.\n");
+                } else {
+                    customers[i].balance -= amount;
+                    printf("Withdrawal successful. New balance: Rs. %.2f\n", customers[i].balance);
+                }
+            }
+            return;
+        }
+    }
+    printf("Account number %d not found.\n", account_number);
+}
+int main() {
+    struct Customer customers[200]; 
+    int n = 5; 
+    customers[0].account_number = 1001;
+    strcpy(customers[0].name, "satish");
+    customers[0].balance = 1500;
+    customers[1].account_number = 1002;
+    strcpy(customers[1].name, "Bob");
+    customers[1].balance = 800;
+    customers[2].account_number = 1003;
+    strcpy(customers[2].name, "sahil");
+    customers[2].balance = 1200;
+    customers[3].account_number = 1004;
+    strcpy(customers[3].name, "abhenesh");
+    customers[3].balance = 950;
+    customers[4].account_number = 1005;
+    strcpy(customers[4].name, "azam");
+    customers[4].balance = 500;
+    printLowBalanceCustomers(customers, n);
+    int account_number, code;
+    float amount;
+    account_number = 1002;
+    amount = 500;
+    code = 0; 
+    transaction(customers, n, account_number, amount, code);
+    account_number = 1001;
+    amount = 2000;
+    code = 1; 
+    transaction(customers, n, account_number, amount, code);
+    return 0;
+}
+
+output=
+
+Customers with balance below Rs. 1000:
+Account Number: 1002, Name: Bob
+Account Number: 1004, Name: abhenesh
+Account Number: 1005, Name: azam
+The balance is insufficient for the specified withdrawal.
+Deposit successful. New balance: Rs. 3500.00

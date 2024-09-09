@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main() {
+    char str1[10], str2[10], str3[10], str4[10];
+    printf("Enter the string: ");
+    scanf("%s %s %s %s", str1, str2, str3, str4);
+    printf("str1: %s\n", str1);
+    printf("str2: %s\n", str2);
+    printf("str3: %s\n", str3);
+    printf("str4: %s\n", str4);
+    return 0;
+}
+
+Output=
+
+Enter the string: alice
+in
+wonder
+land
+str1: alice
+str2: in
+str3: wonder
+str4: land

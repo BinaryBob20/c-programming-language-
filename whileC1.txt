@@ -1,0 +1,9 @@
+#include<stdio.h>
+void main()
+{
+    int i;
+    while(i=0, i<=255 , i++)
+    {
+    printf("ASCII values are =%d\n",i);
+    }
+}
