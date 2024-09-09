@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+    int m1,m2,m3,m4,m5,ag;
+    float pr;
+    printf("\nEnter marks of 5 subjects=");
+    scanf("%d%d%d%d%d",&m1,&m2,&m3,&m4,&m5);
+   ag=m1+m2+m3+m4+m5;
+   pr=ag/5;
+    printf("Aggrigate marks=%d\n ",ag);
+    printf("Percentage marks=%d\n",pr);
+
+    return 0;
+}
