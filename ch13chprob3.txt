@@ -1,0 +1,30 @@
+	#include<stdio.h>
+int main()
+{
+    int i=3, *x;
+    float j=1.5, *y;
+    char k='c', *z;
+    printf("Value of i=%d\n",i);
+    printf("Value of j=%f\n",j);
+    printf("Value of k=%c\n",k);
+    x=&i; y=&j; z=&k;
+    printf("Original address in x=%u\n",x);
+    printf("Original address in y=%u\n",y);
+    printf("Original address in z=%u\n",z);
+    x++; y++; z++;
+    printf("New address in x=%u\n",x);
+    printf("New address in y=%u\n",y);
+    printf("new address in z=%u\n",z);
+    return 0;
+}
+Output=
+
+Value of i=3
+Value of j=1.500000
+Value of k=c
+Original address in x=35891364
+Original address in y=35891360
+Original address in z=35891359
+New address in x=35891368
+New address in y=35891364
+new address in z=35891360

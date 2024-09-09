@@ -1,0 +1,46 @@
+#include <stdio.h>
+#define PI 3.1415
+#define PEROFCIR(r)(2*PI*r)
+#define AREAOFCIR(r)(PI*r*r)
+#define PEROFSQR(x)(4*x)
+#define AREAOFSQR(x)(x*x)
+#define PEROFTRI(x,y,z)(x+y+z)
+#define AREAOFTRI(b,h)(0.5*b*h)
+int main() 
+{
+    float s1,s2,s3,s,p_tri,p_c,p_sqr,a_tri,a_c,a_sqr,r,b,h;
+    printf("\nEnter radius of circle=");
+    scanf("%f",&r);
+    p_c=PEROFCIR(r);
+    printf("Circumference of circle=%f\n",p_c);
+    a_c=AREAOFCIR(r);
+    printf("Area of circle=%f\n",a_c);
+    printf("Enter side of square=");
+    scanf("%f",&s);
+    p_sqr=PEROFSQR(s);
+    printf("Perimeter of square=%f\n",p_sqr);
+    a_sqr=AREAOFSQR(s);
+    printf("Area of square=%f\n",a_sqr);
+    printf("Enter the length of 3 sides of triangle=");
+    scanf("%f%f%f",&s1,&s2,&s3);
+    p_tri=PEROFTRI(s1,s2,s3);
+    printf("Perimeter of triangle=%f\n",p_tri);
+    printf("Enter the breadth and height of the triangle=");
+    scanf("%f%f",&b,&h);
+    a_tri=AREAOFTRI(b,h);
+    printf("Area of triangle=%f\n",a_tri);
+    return 0;
+}
+
+Output=
+
+Enter radius of circle=5
+Circumference of circle=31.415001
+Area of circle=78.537498
+Enter side of square=6
+Perimeter of square=24.000000
+Area of square=36.000000
+Enter the length of 3 sides of triangle=3 4 5
+Perimeter of triangle=12.000000
+Enter the breadth and height of the triangle=4 6
+Area of triangle=12.000000

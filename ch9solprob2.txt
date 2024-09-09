@@ -1,0 +1,29 @@
+#include<stdio.h>
+void power_fact(float,int,int,float *,int *);
+int main()
+{
+    float A,pow;
+    int B,num,factorial;
+    printf("Enter A and B for calculating A raised to B=");
+    scanf("%f%d",&A,&B);
+    printf("Enter a number whose factorial is to be calculated=");
+    scanf("%d",&num);
+    power_fact(A,B,num,&pow,&factorial);
+    printf("Power=%f\n Factorail=%d",pow,factorial);
+    return 0;
+}
+void power_fact(float x,int y,int num,float *power,int *fact)
+{
+    float res=1;
+    int i;
+    for(i=1;i<=y;i++){
+        res*=x;
+        *power=res;
+    }
+    res=1;
+    for(i=1;i<=num;i++){
+        res*=i;
+        *fact=res;
+    }
+    
+}

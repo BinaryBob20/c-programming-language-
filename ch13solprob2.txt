@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+    int original[5], reversed[5];
+    
+    // Input 5 elements from the user
+    printf("Enter 5 elements:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &original[i]);
+    }
+
+    // Copy elements in reverse order
+    for (int i = 0; i < 5; i++) {
+        reversed[i] = original[4 - i];
+    }
+
+    // Print the original array
+    printf("Original array:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", original[i]);
+    }
+    printf("\n");
+
+    // Print the reversed array
+    printf("Reversed array:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", reversed[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+output=
+
+Enter 5 elements:
+Element 1: 10
+Element 2: 20
+Element 3: 30
+Element 4: 40
+Element 5: 50
+Original array:
+10 20 30 40 50 
+Reversed array:
+50 40 30 20 10 

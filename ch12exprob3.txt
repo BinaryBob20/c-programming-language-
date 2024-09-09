@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define SIMPLE_INTEREST(P,R,T)((P)*(R)*(T)/100.0)
+#define TOTAL_AMOUNT(P,SI)((P)+(SI))
+
+int main() {
+    float principal, rate, time, interest, amount;
+    printf("Enter the principal amount: ");
+    scanf("%f", &principal);
+    printf("Enter the rate of interest: ");
+    scanf("%f", &rate);
+    printf("Enter the time period in years: ");
+    scanf("%f", &time);
+    interest = SIMPLE_INTEREST(principal, rate, time);
+    amount = TOTAL_AMOUNT(principal, interest);
+    printf("Simple Interest: %.2f\n", interest);
+    printf("Total Amount: %.2f\n", amount);
+    return 0;
+}
+
+Output=
+
+Enter the principal amount: 3500
+Enter the rate of interest: 20
+Enter the time period in years: 5
+Simple Interest: 3500.00
+Total Amount: 7000.00

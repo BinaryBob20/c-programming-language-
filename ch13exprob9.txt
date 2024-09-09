@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+    float x[10], y[10];
+    float d;
+    printf("Enter the X and Y coordinates of 10 points:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("Point %d: ", i + 1);
+        scanf("%f %f", &x[i], &y[i]);
+    }
+    d=sqrt(x[0] * x[0] + y[0] * y[0]);
+    printf("The distance of the first point (%.2f, %.2f) from the origin is: %.2f\n",x[0],y[0],d);
+    return 0;
+}
+
+Output=
+
+Enter the X and Y coordinates of 10 points:
+Point 1: 10
+6
+Point 2: 23
+1
+Point 3: 14
+2
+Point 4: 31
+6
+Point 5: 15
+3
+Point 6: 15
+3
+Point 7: 26
+3
+Point 8: 15
+3
+
+3
+Point 9: 15
+3
+Point 10: 12
+1
+The distance of the first point (10.00, 6.00) from the origin is: 11.66

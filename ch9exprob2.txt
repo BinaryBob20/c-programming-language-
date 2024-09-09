@@ -1,0 +1,20 @@
+#include <stdio.h>
+void convertWeight(float kg, float *gr, float *t, float *p);
+int main() 
+{
+    float kg;
+    float gr,t, p;
+    printf("Enter weight in kilograms: ");
+    scanf("%f", &kg);
+    convertWeight(kg, &gr, &t, &p);
+    printf("Weight in grams: %.2f g\n", gr);
+    printf("Weight in tons: %.6f tons\n", t);
+    printf("Weight in pounds: %.2f lbs\n", p);
+
+    return 0;
+}
+void convertWeight(float kg, float *gr, float *t, float *p) {
+    *gr = kg * 1000;
+    *t = kg / 1000;
+    *p = kg * 2.20462;
+}

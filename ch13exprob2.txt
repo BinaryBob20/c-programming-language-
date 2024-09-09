@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdbool.h>
+bool isSymmetric(int arr[] , int n);
+int main() {
+    int n;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter the elements of the array:\n");
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    if(isSymmetric(arr, n)) {
+        printf("The array is symmetric.\n");
+    } else {
+        printf("The array is not symmetric.\n");
+    }
+    return 0;
+}
+bool isSymmetric(int arr[], int n) {
+    for(int i = 0; i < n / 2; i++) {
+        if(arr[i] != arr[n - i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+Output=
+
+Enter the number of elements in the array: 2
+Enter the elements of the array:
+5
+1
+The array is not symmetric

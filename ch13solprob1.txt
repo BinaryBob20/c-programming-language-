@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main() {
+    int arr[10];
+    printf("Enter 10 elements:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &arr[i]);
+    }
+    for (int i = 0; i < 10; i += 2) {
+        int temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+    }
+    printf("Array after interchanging elements:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+Output=
+
+Enter 10 elements:
+Element 1: 12
+Element 2: 4
+Element 3: 5
+Element 4: 1
+Element 5: 9
+Element 6: 13
+Element 7: 11
+Element 8: 19
+Element 9: 54
+Element 10: 34
+Array after interchanging elements:
+4 12 1 5 13 9 19 11 34 54 

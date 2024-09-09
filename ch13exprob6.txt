@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int data[] = {-6, -12, 8, 13, 11, 6, 7, 2, -6, -9, -10, 11, 10, 9, 2};
+    int n = sizeof(data) / sizeof(data[0]);
+    int sum = 0;
+    float mean, sumd = 0.0, stad;
+    for(int i = 0; i < n; i++) {
+        sum += data[i];
+    }
+    mean=(float)sum/n;
+    for(int i = 0; i < n; i++) {
+        sumd+=pow(data[i]-mean,2);
+    }
+    stad=sqrt(sumd/n);
+    printf("Mean: %.2f\n", mean);
+    printf("Standard Deviation: %.2f\n", stad);
+
+    return 0;
+}
+
+Output=
+
+Mean: 2.40
+Standard Deviation: 8.40

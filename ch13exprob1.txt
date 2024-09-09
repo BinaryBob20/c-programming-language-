@@ -1,0 +1,62 @@
+#include <stdio.h>
+int main() {
+    int numbers[25];
+    int positiveCount = 0, negativeCount = 0, oddCount = 0, evenCount = 0;
+    printf("Enter 25 numbers:\n");
+    for (int i = 0; i < 25; i++) {
+        printf("Number %d: ", i+1);
+        scanf("%d", &numbers[i]);
+    }
+    for (int i = 0; i < 25; i++) {
+        if (numbers[i] > 0) {
+            positiveCount++;
+        } else if (numbers[i] < 0) {
+            negativeCount++;
+        }
+
+        if (numbers[i] % 2 == 0) {
+            evenCount++;
+        } else {
+            oddCount++;
+        }
+    }
+    printf("\nTotal positive numbers: %d\n", positiveCount);
+    printf("Total negative numbers: %d\n", negativeCount);
+    printf("Total odd numbers: %d\n", oddCount);
+    printf("Total even numbers: %d\n", evenCount);
+    return 0;
+}
+
+Output=
+Enter 25 numbers:
+Number 1: 25
+Number 2: 36
+Number 3: 14
+Number 4: 47
+Number 5: 586
+Number 6: 9
+Number 7: 172
+Number 8: 839
+Number 9: 
+-14
+Number 10: -25
+Number 11: -63
+Number 12: -47
+Number 13: -58
+Number 14: -69
+Number 15: 46
+Number 16: 32
+Number 17: 516
+Number 18: 32
+Number 19: 59
+Number 20: 84
+Number 21: 76
+Number 22: 9
+Number 23: 65
+Number 24: 0
+Number 25: 6
+
+Total positive numbers: 18
+Total negative numbers: 6
+Total odd numbers: 14
+Total even numbers: 11

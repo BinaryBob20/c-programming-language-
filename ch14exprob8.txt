@@ -1,0 +1,54 @@
+#include <stdio.h>
+#define ROWS 4
+#define COLS 5
+void circularLeftShift(int arr[], int size);
+int main() {
+    int matrix[ROWS][COLS] = {
+        {15, 30, 28, 19, 61},
+        {22, 14, 36, 45, 50},
+        {75, 85, 95, 12, 25},
+        {9, 18, 27, 36, 45}
+    };
+    printf("Original Matrix:\n");
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    for (int i = 0; i < ROWS; i++) {
+        circularLeftShift(matrix[i], COLS);
+    }
+    printf("\nMatrix after circular left shift by two positions:\n");
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+void circularLeftShift(int arr[], int size) {
+    int temp1 = arr[0];
+    int temp2 = arr[1];
+    for (int i = 0; i < size - 2; i++) {
+        arr[i] = arr[i + 2];
+    }
+    arr[size - 2] = temp1;
+    arr[size - 1] = temp2;
+}
+
+Output=
+
+Original Matrix:
+15 30 28 19 61 
+22 14 36 45 50 
+75 85 95 12 25 
+9 18 27 36 45 
+
+Matrix after circular left shift by two positions:
+28 19 61 15 30 
+36 45 50 22 14 
+95 12 25 75 85 
+27 36 45 9 18 

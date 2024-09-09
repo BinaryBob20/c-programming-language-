@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+    int avg,sum=0,i;
+    int marks[3];
+    for(i=0;i<=2;i++)
+    {
+        printf("Enter marks=");
+        scanf("%d",&marks[i]);
+    }
+    for(i=0;i<=2;i++)
+        sum=sum+marks[i];
+        avg=sum/3;
+    
+    printf("Average marks=%d\n",avg);
+    return 0;
+}
+Output=
+
+Enter marks=2
+Enter marks=3
+Enter marks=4
+Average marks=3
+

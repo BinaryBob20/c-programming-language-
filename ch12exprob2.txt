@@ -1,0 +1,37 @@
+#include <stdio.h>
+#define ARMEAN(x, y)(((x)+(y))/2.0)
+#define ABSVALUE(x)((x)<0?-(x):(x))
+#define LOWER(c)((c)>='A'&&(c)<='Z'?((c)+32):(c))
+#define BIGOFTHREE(x,y,z)((x)>(y)?((x)>(z)?(x):(z)):((y)>(z)?(y):(z)))
+
+int main() {
+    double n1, n2;
+    int v, a, b, c;
+    char up;
+    printf("Enter two numbers to calculate their arithmetic mean: ");
+    scanf("%lf %lf", &n1, &n2);
+    double mean = ARMEAN(n1, n2);
+    printf("Arithmetic Mean of %.2f and %.2f: %.2f\n",n1,n2,mean);
+    printf("Enter a number to find its absolute value: ");
+    scanf("%d",&v);
+    printf("Absolute value of %d: %d\n",v,ABSVALUE(v));
+    printf("Enter an uppercase letter to convert to lowercase: ");
+    scanf(" %c",&up); 
+    printf("Lowercase of %c: %c\n",up,LOWER(up));
+    printf("Enter three numbers to find the biggest one: ");
+    scanf("%d %d %d",&a,&b,&c);
+    printf("Biggest of %d, %d, and %d: %d\n",a,b,c,BIGOFTHREE(a,b,c));
+
+    return 0;
+}
+
+Output=
+
+Enter two numbers to calculate their arithmetic mean: 10 20
+Arithmetic Mean of 10.00 and 20.00: 15.00
+Enter a number to find its absolute value: 9
+Absolute value of 9: 9
+Enter an uppercase letter to convert to lowercase: G
+Lowercase of G: g
+Enter three numbers to find the biggest one: 13 26 99
+Biggest of 13, 26, and 99: 99

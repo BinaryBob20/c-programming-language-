@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main() {
+    int arr[25];
+    int *ptr;
+    int s;
+    printf("Enter 25 integers:\n");
+    for(int i = 0; i < 25; i++) {
+        scanf("%d", &arr[i]);
+    }
+    ptr=arr;
+    s=*ptr;
+    for(int i = 1; i < 25; i++) {
+        if(*(ptr + i) < smallest) {
+            smallest = *(ptr + i);
+        }
+    }
+    printf("The smallest number in the array is: %d\n", s);
+    return 0;
+}
+
+
+Output=
+
+Enter 25 integers:
+1
+2
+1
+3
+5
+6
+5
+4
+8
+9
+46
+55
+631
+6
+
+326
+262
+26
+6
+2
+5
+7
+8
+26
+3
+2
+16
+56
+The smallest number in the array is: 1
