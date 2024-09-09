@@ -1,0 +1,26 @@
+#include<stdio.h>
+int rome(int,int,char);
+int main()
+{
+    int y;
+    printf("Enter the year=");
+    scanf("%d",&y);
+    y=rome(y,1000,'m');
+    y=rome(y,500,'d');
+    y=rome(y,100,'c');
+    y=rome(y,50,'l');
+    y=rome(y,10,'x');
+    y=rome(y,5,'v');
+    rome(y,1,'i');
+    return 0;
+}
+int rome(int y,int k,char ch)
+{
+    int i,j;
+    j=y/k;
+    for(i=1;i<=j;i++)
+    {
+        printf("%c",ch);
+    }
+    return (y%k);
+}

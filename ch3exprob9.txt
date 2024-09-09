@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int year, days = 0;
+    int DW;
+
+    printf("Enter the year: ");
+    scanf("%d", &year);
+
+    for (int i = 1; i < year; i++) {
+        if (i % 400 == 0) {
+            days += 365;
+        } else if (i % 100 == 0) {
+            days += 365;
+        } else if (i % 4 == 0) {
+            days += 365;
+        } else {
+            days += 365;
+        }
+    }
+
+
+
+    return 0;
+}

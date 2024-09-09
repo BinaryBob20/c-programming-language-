@@ -1,0 +1,41 @@
+#include <stdio.h>
+void pf(int ); 
+int main() 
+{
+    int num;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+
+    if (num <= 1) {
+        printf("Prime factors are not defined for numbers less than or equal to 1.\n");
+    } 
+    else
+    {
+        printf("Prime factors of %d are: ", num);
+        pf(num);
+        printf("\n");
+    }
+
+    return 0;
+}
+void pf(int n) 
+{
+    int i;
+    while (n % 2 == 0) {
+        printf("%d ", 2);
+        n = n / 2;
+    }
+
+    for (int i = 3; i * i <= n; i = i + 2) {
+  
+        while (n % i == 0) {
+            printf("%d ", i);
+            n = n / i;
+        }
+    }
+
+    if (n > 2) {
+        printf("%d ", n);
+    }
+}

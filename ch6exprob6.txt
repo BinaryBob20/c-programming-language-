@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() 
+{
+    int yr;
+    float p= 100000, gr=0.10;
+
+    printf("Year\nPopulation\n");
+
+    for (yr = 1; yr <= 10; yr++) {
+ 
+        p = p * (1 + gr);
+
+        printf("%d\n%.0f\n", yr, p);
+    }
+
+    return 0;
+}

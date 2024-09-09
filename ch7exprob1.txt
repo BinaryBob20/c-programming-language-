@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    int s, f, g = 0;
+
+    printf("Enter the class obtained by the student \n1 for First class, \n2 for Second class, \n3 for Third class: ");
+    scanf("%d", &s);
+    printf("\nEnter the number of subjects the student has failed in: ");
+    scanf("%d", &f);
+
+    switch (s) {
+        case 1:
+            if (f <= 3) {
+                g = f * 5;
+            } else {
+                g = 0;
+            }
+            break;
+        case 2: 
+            if (f <= 2) {
+                g = f * 4;
+            } else {
+                g = 0;
+            }
+            break;
+        case 3: 
+            if (f == 1) {
+                g = 5;
+            } else {
+                g = 0;
+            }
+            break;
+        default:
+            printf("Invalid class entered!\n");
+          
+    }
+
+    printf("The grace marks awarded to the student are: %d\n", g);
+
+    return 0;
+}

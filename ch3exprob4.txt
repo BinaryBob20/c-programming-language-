@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() 
+{
+    int num , av;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num >= 0) {
+        av = num;
+    } else {
+        av = -num;
+    }
+
+    printf("The absolute value of %d is %d\n", num, av);
+
+    return 0;
+}

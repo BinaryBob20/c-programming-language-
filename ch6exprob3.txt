@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int n,q;
+    double p,r,a;
+    printf("Enter the value of (p)=%1f\n");
+    scanf("%f",&p);
+    printf(",Enter the value of (q)=%1f\n");
+    scanf("%1f",&r);
+    printf("Enter the value of (p)=%d\n");
+    scanf("%d",&n);
+    printf("Enter the value of (r)=%d\n");
+    scanf("%d",&q);
+    r= r / 100.0;
+    a= p * pow ((1+r/q),n * q);
+     printf("The amount after %d years is: %.2lf\n", n, a);
+    return 0;
+}
